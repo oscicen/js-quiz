@@ -42,7 +42,7 @@ const Question = ({ question, goNext, isList, skipQuestion }) => {
     <div className={classNames(styles.container, { [styles.list]: isList })}>
       <Box w='100%' borderRadius='md' borderWidth='1px' p={4} className={classNames({ [styles.important]: question?.important })}>
         { question?.important && <div className={ styles.badge }>{ importantText }</div> }
-        <h3 dangerouslySetInnerHTML={{ __html: `${ question.number }. ${ question.question }` }} />
+        <h3>{`${ question.id }. ${ question.question }`}</h3>
         <div className={ styles.answers }>
           { question.answers.map(answer => (
             <button
